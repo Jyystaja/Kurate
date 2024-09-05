@@ -1,0 +1,284 @@
+body{
+    margin:0;
+    padding: 0;
+    background-color: black;
+    font-family: "Roboto", sans-serif;
+}
+#renderCanvas {
+    width: 80vw;  /* Set width to 80% of the viewport width */
+    height: 80vh; /* Set height to 80% of the viewport height */
+    display: block; 
+}
+
+.banner1{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+}
+.banner1 *{
+    z-index: 20;
+}
+.banner1-bg{
+    overflow: hidden;
+    z-index: -99;
+    width: 100%;
+    height: 100vh;
+}
+.banner1 .BG{
+    width: 150%;
+    height: 150%;
+    top:0;
+}
+.record1{
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+    left:40%;
+    bottom:0;
+    width: 25%;
+    height: auto;
+    transform: translateY(100px); /* Start slightly below */
+    transition: opacity 3s ease-in, transform 0.5s ease-in;
+}
+.record2{
+    position: absolute;
+    opacity: 0;
+    z-index: 3;
+    left:5%;
+    top:0;
+    width: 12%;
+    height: auto;
+    transform: translateY(-50%); /* Start slightly below */
+    transition: opacity 3s ease-in, transform 0.5s ease-in;
+}
+.record3{
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+    right:0%;
+    top:15%;
+    width: 12%;
+    height: auto;
+    transform: translateX(100px); /* Start slightly below */
+    transition: opacity 1s ease-in, transform 0.5s ease-in;
+}
+.logo{
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+    right:30%;
+    top:25%;
+    width: 35%;
+    height: auto;
+    transform: translateX(-50px); /* Start slightly below */
+    transition: opacity 2s ease-in, transform 1s ease-in;
+}
+.banner2{
+    top:100%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fade-in span {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+.banner2 h1{
+    font-size: 80px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.banner1-bg * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,auto));
+    gap: 4px;
+}
+#container span {
+    position: relative;
+    height: 300px;
+    background: rgb(0, 0, 0);
+    z-index: 3;
+}
+#container span:before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: rgba(252, 249, 249, 0);
+}
+#cursor {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.404);
+    -webkit-animation: animate 4s linear infinite;
+    animation: animate 4s linear infinite;
+}
+#cursor:before, #cursor:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.404);
+    border-radius: 50%;
+}
+@-webkit-keyframes animate {
+    0% {
+        filter: hue-rotate(0deg) blur(100px);
+    }
+    100% {
+        filter: hue-rotate(360deg) blur(100px);
+    }
+}
+@keyframes animate {
+    0% {
+        filter: hue-rotate(0deg) blur(100px);
+    }
+    100% {
+        filter: hue-rotate(360deg) blur(100px);
+    }
+}
+.banner3{
+    width: 100%;
+    height: 150vh;
+    top:300vh;
+}
+.banner3 .title{
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    position: relative;
+}
+.banner3 .title h1{
+    font-size: 200px;
+    font-weight: 400;
+}
+.artists-desc{
+    width: 30%;
+    height: 100%;
+    right: 0;
+    position: absolute;
+    right:0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap:5%;
+}
+.artists-desc h2{
+    font-size: 30px;
+}
+.artists-desc button{
+    font-size: 20px;
+    background-color: transparent;
+    border-color: transparent;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.artists-desc button .underline{
+    text-decoration: underline;
+}
+.artists-desc button .material-symbols-outlined {
+    /* Ensure that the icon does not inherit underline or any other unwanted styles */
+    text-decoration: none;
+}
+.artists{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.artists .artist1{
+    width: 33%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+.artists .artist1 .image-div{
+    width: auto;
+    height: 80%;
+    margin: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.artists .artist1 .image-div img{
+    width: 100%;
+    height: auto;
+}
+.artists .artist2 .image-div{
+    width: auto;
+    height: 80%;
+    margin: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.artists .artist2 .image-div img{
+    width: 100%;
+    height: auto;
+}
+.artists .artist2{
+    width: 33%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+}
+.artists .artist2 .artist-name{
+    width: 70%;
+    height: 25%;
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 5%;
+}
+.artists .artist1 .artist-name{
+    width: 70%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 5%;
+}
+.artists .artist-name h1{
+    font-size: 70px;
+}
+.artists .artist-name h2{
+    font-size: 20px;
+    word-wrap:break-word;
+}
